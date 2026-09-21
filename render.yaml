@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: gamehub-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://gaberserk.github.io
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gamehub-db
+          property: connectionString
+
+databases:
+  - name: gamehub-db
+    databaseName: gamehub
+    user: gamehub

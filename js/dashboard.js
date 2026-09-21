@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     const [userResponse, gamesResponse] = await Promise.all([
-      fetch('/api/auth/me', { headers }),
-      fetch('/api/games', { headers })
+      fetch(`${API_URL}/api/auth/me`, { headers }),
+      fetch(`${API_URL}/api/games`, { headers })
     ]);
 
     if (!userResponse.ok || !gamesResponse.ok) {
