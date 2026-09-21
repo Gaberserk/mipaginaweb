@@ -4,7 +4,6 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-const Database = require('better-sqlite3');
 const { Pool } = require('pg');
 
 const app = express();
@@ -21,7 +20,9 @@ if (!jwtSecret || jwtSecret.length < 32) {
 
 fs.mkdirSync(dataDirectory, { recursive: true });
 
-const sqlite = process.env.DATABASE_URL ? null : new Database(path.join(dataDirectory, 'gamehub.sqlite'));
+const sqlite = process.env.DATABASE_URL
+  ? null
+  : new (require('better-sqlite3'))(path.join(dataDirectory, 'gamehub.sqlite'));
 const postgres = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } })
   : null;
