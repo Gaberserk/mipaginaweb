@@ -346,6 +346,12 @@ body {
   padding: 22px 0;
 }
 
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .dashboard-main {
   padding: 30px 0 60px;
 }
@@ -525,6 +531,18 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
 .contact-hero h1 {
   margin: 8px 0;
   font-size: clamp(2rem, 5vw, 3.2rem);
@@ -575,6 +593,10 @@ body {
   .dashboard-topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .dashboard-actions {
+    width: 100%;
   }
 }
 
