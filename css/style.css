@@ -1,15 +1,15 @@
 :root {
-  --bg: #0b0a12;
-  --panel: #13121c;
-  --panel-alt: #181724;
-  --panel-soft: #0f0e17;
-  --text: #f2f0ff;
-  --muted: #9793aa;
-  --border: #2b293c;
-  --primary: #9a7cff;
-  --accent: #62d9ff;
-  --highlight: #c3a6ff;
-  --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  --bg: #1b2838;
+  --panel: #162536;
+  --panel-alt: #20364d;
+  --panel-soft: #101923;
+  --text: #d6e6f5;
+  --muted: #8da4bb;
+  --border: #2a475e;
+  --primary: #1a9fff;
+  --accent: #66c0f4;
+  --highlight: #c7d5e0;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -22,8 +22,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Inter, Arial, sans-serif;
-  background: radial-gradient(circle at 50% -20%, #201b3b 0, var(--bg) 42%);
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #1b2838 0, #192b3d 45%, #101923 100%);
   color: var(--text);
 }
 
@@ -33,12 +33,12 @@ body {
 }
 
 .site-header {
-  background: rgba(19, 18, 28, 0.94);
+  background: #171d25;
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid #000000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
 }
 
 .nav {
@@ -49,16 +49,15 @@ body {
 }
 
 .brand {
-  font-size: 1rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--text);
 }
 
 .brand::before {
-  content: "●";
-  color: #ff6b8a;
-  margin-right: 7px;
+  content: "";
+  margin-right: 0;
 }
 
 .nav-links {
@@ -70,7 +69,14 @@ body {
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.86rem;
+  font-size: 0.9rem;
+  padding: 9px 12px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--text);
+  background: #2a475e;
 }
 
 .nav-links a::before {
@@ -82,21 +88,21 @@ body {
 }
 
 .hero {
-  padding: 92px 0 58px;
+  padding: 68px 0 48px;
 }
 
 .hero-content {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
-  gap: 30px;
+  gap: 42px;
 }
 
 .eyebrow {
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.76rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
@@ -105,21 +111,20 @@ body {
 }
 
 .hero h1 {
-  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
   margin: 12px 0 14px;
   line-height: 1.1;
   color: var(--text);
 }
 
 .hero h1::before {
-  content: "$ ";
-  color: var(--accent);
+  content: "";
 }
 
 .subtitle {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 1rem;
   max-width: 620px;
   line-height: 1.7;
 }
@@ -136,9 +141,9 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 9px 16px;
-  font-size: 0.88rem;
+  border-radius: 2px;
+  padding: 11px 20px;
+  font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -147,18 +152,20 @@ body {
 
 .btn:hover {
   color: #ffffff;
-  background: var(--accent);
-  border-color: var(--accent);
+  background: #67c1f5;
+  border-color: #67c1f5;
 }
 
 .btn.primary {
   background: var(--primary);
   border-color: var(--primary);
   color: #ffffff;
+  background: linear-gradient(90deg, #75b022, #a4d007);
+  border-color: #75b022;
 }
 
 .btn.secondary {
-  background: var(--panel);
+  background: rgba(103, 193, 245, 0.16);
   color: var(--text);
 }
 
@@ -169,7 +176,7 @@ body {
 .hero-card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: 2px;
   padding: 22px 24px;
   box-shadow: var(--shadow);
 }
@@ -189,7 +196,7 @@ body {
 }
 
 .hero-card li::before {
-  content: "›";
+  content: "•";
   color: var(--accent);
   margin-right: 10px;
   font-size: 0.8rem;
@@ -205,7 +212,7 @@ body {
 .feature {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: 2px;
   padding: 22px 20px;
   box-shadow: var(--shadow);
 }
@@ -217,8 +224,7 @@ body {
 }
 
 .feature h3::before {
-  content: "$ ";
-  color: var(--accent);
+  content: "";
 }
 
 .feature p {
@@ -230,7 +236,7 @@ body {
 .auth-body,
 .dashboard-body {
   min-height: 100vh;
-  background: radial-gradient(circle at 50% -20%, #201b3b 0, var(--bg) 42%);
+  background: linear-gradient(180deg, #1b2838 0, #101923 100%);
 }
 
 .auth-wrapper {
@@ -244,7 +250,7 @@ body {
   width: min(440px, 100%);
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 28px 22px;
   box-shadow: var(--shadow);
 }
@@ -257,8 +263,7 @@ body {
 }
 
 .auth-card h1::before {
-  content: "→ ";
-  color: var(--accent);
+  content: "";
 }
 
 .auth-card p {
@@ -283,7 +288,7 @@ body {
 
 .auth-form input {
   padding: 12px 13px;
-  border-radius: 6px;
+  border-radius: 2px;
   border: 1px solid var(--border);
   background: var(--panel-soft);
   color: var(--text);
@@ -293,7 +298,7 @@ body {
 
 .auth-form input:focus {
   outline: none;
-  border-color: #a0aec0;
+  border-color: var(--accent);
 }
 
 .auth-form input::placeholder {
@@ -313,7 +318,7 @@ body {
 }
 
 .dashboard-header {
-  background: rgba(19, 18, 28, 0.94);
+  background: #171d25;
   border-bottom: 1px solid var(--border);
 }
 
@@ -339,7 +344,7 @@ body {
 .stat-card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 20px;
   box-shadow: var(--shadow);
 }
@@ -357,13 +362,12 @@ body {
 
 .stat-card strong::before {
   content: "";
-  color: var(--accent);
 }
 
 .games-section {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: 2px;
   padding: 22px;
   box-shadow: var(--shadow);
 }
@@ -383,7 +387,7 @@ body {
 .game-card {
   background: var(--panel-alt);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -395,7 +399,7 @@ body {
   justify-content: center;
   font-size: 0.82rem;
   color: var(--highlight);
-  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .game-content {
@@ -444,15 +448,15 @@ body {
 
 /* Warp-inspired terminal workspace */
 .terminal-page {
-  background: #0d0c14;
+  background: #1b2838;
 }
 
 .terminal-window {
   width: min(1180px, calc(100% - 36px));
   margin: 28px auto 70px;
-  background: #111019;
-  border: 1px solid #302d42;
-  border-radius: 10px;
+  background: #162536;
+  border: 1px solid #2a475e;
+  border-radius: 2px;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
   overflow: hidden;
 }
@@ -463,19 +467,19 @@ body {
   align-items: center;
   gap: 7px;
   padding: 0 16px;
-  background: #191724;
-  border-bottom: 1px solid #2b293b;
+  background: #171d25;
+  border-bottom: 1px solid #000000;
 }
 
 .terminal-toolbar span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #464257;
+  background: #56616e;
 }
 
 .terminal-toolbar span:first-child {
-  background: #f06f8a;
+  background: #e06c75;
 }
 
 .terminal-toolbar small {
@@ -486,7 +490,7 @@ body {
 
 .terminal-tab {
   color: var(--text);
-  font: 0.8rem "Cascadia Mono", Consolas, monospace;
+  font: 0.8rem Arial, Helvetica, sans-serif;
 }
 
 .terminal-tab.active {
@@ -504,7 +508,7 @@ body {
 .terminal-window .feature,
 .terminal-window .hero-card,
 .terminal-window .auth-card {
-  background: #15131f;
+  background: #20364d;
 }
 
 .auth-window {
@@ -521,7 +525,7 @@ body {
 }
 
 .auth-window .auth-card h1 {
-  font-family: "Cascadia Mono", Consolas, monospace;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.65rem;
 }
 
@@ -531,12 +535,12 @@ body {
 
 .auth-window .auth-form label span {
   color: #aaa5bc;
-  font: 0.78rem "Cascadia Mono", Consolas, monospace;
+  font: 0.78rem Arial, Helvetica, sans-serif;
 }
 
 .auth-window .auth-form input {
-  border-color: #373348;
-  background: #0e0d15;
+  border-color: #2a475e;
+  background: #101923;
 }
 
 .auth-window .auth-form input:focus {
@@ -560,5 +564,5 @@ body {
 .dashboard-body .stat-card p,
 .dashboard-body .game-content h3,
 .dashboard-body .game-content p {
-  font-family: "Cascadia Mono", Consolas, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }

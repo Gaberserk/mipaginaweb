@@ -1,37 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const user = JSON.parse(localStorage.getItem('usuarioActivo') || 'null');
-
-  if (!user) {
+document.addEventListener('DOMContentLoaded', async () => {
+  const token = localStorage.getItem('authToken');
+  if (!token) {
     window.location.href = 'login.html';
     return;
   }
 
-  const welcomeUser = document.getElementById('welcomeUser');
-  const favoriteCount = document.getElementById('favoriteCount');
-  const gamesList = document.getElementById('gamesList');
-  const logoutBtn = document.getElementById('logoutBtn');
+  const headers = { Authorization: `Bearer ${token}` };
 
-  welcomeUser.textContent = `Bienvenido, ${user.nombre}`;
-  favoriteCount.textContent = '3';
+  try {
+    const [userResponse, gamesResponse] = await Promise.all([
+      fetch('/api/auth/me', { headers }),
+      fetch('/api/games', { headers })
+    ]);
 
-  const juegos = [
-    { nombre: 'Cyberpunk 2077', descripcion: 'Explora un mundo abierto lleno de desafíos y decisiones.' },
-    { nombre: 'Fortnite', descripcion: 'Compite en partidas rápidas con estilo y estrategia.' },
-    { nombre: 'Minecraft', descripcion: 'Construye, explora y crea mundos infinitos.' }
-  ];
+    if (!userResponse.ok || !gamesResponse.ok) {
+      throw new Error('Sesión inválida');
+    }
 
-  gamesList.innerHTML = juegos.map((juego) => `
-    <article class="game-card">
-      <div class="game-cover">[ game ]</div>
-      <div class="game-content">
-        <h3>${juego.nombre}</h3>
-        <p>${juego.descripcion}</p>
-      </div>
-    </article>
-  `).join('');
+    const { user } = await userResponse.json();
+    const { games } = await gamesResponse.json();
+    document.getElementById('welcomeUser').textContent = `Bienvenido, ${user.name}`;
+    document.getElementById('favoriteCount').textContent = String(games.length);
+    document.getElementById('gamesList').innerHTML = games.map((juego) => `
+      <article class="game-card">
+        <div class="game-cover">GAME</div>
+        <div class="game-content">
+          <h3>${juego.nombre}</h3>
+          <p>${juego.descripcion}</p>
+        </div>
+      </article>
+    `).join('');
+  } catch (error) {
+    localStorage.removeItem('authToken');
+    window.location.href = 'login.html';
+  }
 
-  logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('usuarioActivo');
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('authToken');
     window.location.href = 'login.html';
   });
 });

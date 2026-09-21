@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('registroForm');
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const nombre = document.getElementById('nombre').value.trim();
@@ -19,14 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const usuario = {
-      nombre,
-      email,
-      password
-    };
+    try {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, password })
+      });
+      const result = await response.json();
 
-    localStorage.setItem('registroUsuario', JSON.stringify(usuario));
-    alert('Registro exitoso. Ahora puedes iniciar sesión.');
-    window.location.href = 'login.html';
+      if (!response.ok) {
+        alert(result.error || 'No se pudo crear la cuenta.');
+        return;
+      }
+
+      localStorage.setItem('authToken', result.token);
+      window.location.href = 'dashboard.html';
+    } catch (error) {
+      alert('No se pudo conectar con el servidor.');
+    }
   });
 });

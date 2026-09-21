@@ -1,30 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    const storedUser = JSON.parse(localStorage.getItem('registroUsuario') || 'null');
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const result = await response.json();
 
-    if (!storedUser) {
-      alert('No hay una cuenta registrada. Primero crea una cuenta.');
-      window.location.href = 'registro.html';
-      return;
+      if (!response.ok) {
+        alert(result.error || 'No se pudo iniciar sesión.');
+        return;
+      }
+
+      localStorage.setItem('authToken', result.token);
+      window.location.href = 'dashboard.html';
+    } catch (error) {
+      alert('No se pudo conectar con el servidor.');
     }
-
-    if (storedUser.email !== email || storedUser.password !== password) {
-      alert('Correo o contraseña incorrectos.');
-      return;
-    }
-
-    localStorage.setItem('usuarioActivo', JSON.stringify({
-      nombre: storedUser.nombre,
-      email: storedUser.email
-    }));
-
-    window.location.href = 'dashboard.html';
   });
 });
