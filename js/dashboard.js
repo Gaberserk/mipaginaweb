@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
   favoriteCount.textContent = '3';
 
   const juegos = [
-    { nombre: 'Cyberpunk 2077', descripcion: 'Explora un mundo abierto lleno de desafíos y decisiones.', icono: '🎮' },
-    { nombre: 'Fortnite', descripcion: 'Compite en partidas rápidas con estilo y estrategia.', icono: '🛡️' },
-    { nombre: 'Minecraft', descripcion: 'Construye, explora y crea mundos infinitos.', icono: '🧱' }
+    { nombre: 'Cyberpunk 2077', descripcion: 'Explora un mundo abierto lleno de desafíos y decisiones.' },
+    { nombre: 'Fortnite', descripcion: 'Compite en partidas rápidas con estilo y estrategia.' },
+    { nombre: 'Minecraft', descripcion: 'Construye, explora y crea mundos infinitos.' }
   ];
 
   gamesList.innerHTML = juegos.map((juego) => `
     <article class="game-card">
-      <div class="game-cover">${juego.icono}</div>
+      <div class="game-cover">[ game ]</div>
       <div class="game-content">
         <h3>${juego.nombre}</h3>
         <p>${juego.descripcion}</p>

@@ -6,23 +6,27 @@
     <title>Mi Página Web</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="terminal-page">
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">GameHub</div>
         <div class="nav-links">
-          <a href="index.html">Inicio</a>
-          <a href="login.html">Iniciar sesión</a>
-          <a href="registro.html">Registrarse</a>
+          <span class="terminal-tab active">workspace</span>
+          <a href="login.html">login</a>
+          <a href="registro.html">register</a>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main class="terminal-window">
+      <div class="terminal-toolbar">
+        <span></span><span></span><span></span>
+        <small>gamehub / workspace</small>
+      </div>
       <section class="hero">
         <div class="container hero-content">
           <div>
-            <p class="eyebrow">Explora, juega y conecta</p>
+            <p class="eyebrow">gamehub@workspace:~$ start</p>
             <h1>Tu portal para descubrir juegos y contenido gaming.</h1>
             <p class="subtitle">
               Accede a una experiencia moderna con panel de usuario, listas de juegos y una
@@ -34,11 +38,11 @@
             </div>
           </div>
           <div class="hero-card">
-            <h2>¡Bienvenido!</h2>
+            <h2>session ready</h2>
             <ul>
-              <li>Catálogo de juegos</li>
-              <li>Acceso rápido</li>
-              <li>Perfil personalizado</li>
+              <li>catalog loaded</li>
+              <li>authentication available</li>
+              <li>workspace ready</li>
             </ul>
           </div>
         </div>
@@ -46,15 +50,15 @@
 
       <section class="features container">
         <article class="feature">
-          <h3>Acceso rápido</h3>
+          <h3>login</h3>
           <p>Inicia sesión en segundos y accede a tu espacio personal.</p>
         </article>
         <article class="feature">
-          <h3>Registro sencillo</h3>
+          <h3>register</h3>
           <p>Completa tus datos y crea tu cuenta con un proceso intuitivo.</p>
         </article>
         <article class="feature">
-          <h3>Dashboard moderno</h3>
+          <h3>dashboard</h3>
           <p>Consulta tu perfil, juegos y actividad desde un único lugar.</p>
         </article>
       </section>

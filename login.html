@@ -6,11 +6,17 @@
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="auth-body">
+  <body class="auth-body terminal-page">
     <main class="auth-wrapper">
+      <div class="terminal-window auth-window">
+        <div class="terminal-toolbar">
+          <span></span><span></span><span></span>
+          <small>gamehub / login</small>
+        </div>
       <section class="auth-card">
+        <p class="eyebrow">gamehub@workspace:~$ login</p>
         <h1>Iniciar sesión</h1>
-        <p>Accede a tu panel personal.</p>
+        <p>Introduce tus credenciales para continuar.</p>
 
         <form id="loginForm" class="auth-form">
           <label>
@@ -31,6 +37,7 @@
           <a href="registro.html">Regístrate aquí</a>
         </p>
       </section>
+      </div>
     </main>
 
     <script src="js/login.js"></script>
