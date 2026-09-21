@@ -1,2 +1,1 @@
-// Set this value to the public Render URL before publishing the frontend.
-const API_URL = window.GAMEHUB_API_URL || '';
+const API_URL = window.GAMEHUB_API_URL || 'https://mipaginaweb-68p6.onrender.com';
