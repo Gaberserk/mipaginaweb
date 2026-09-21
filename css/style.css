@@ -45,7 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 14px 0;
 }
 
 .brand {
@@ -62,21 +62,37 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 4px;
   align-items: center;
 }
 
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 9px 12px;
+  font-size: 0.84rem;
+  padding: 7px 10px;
+  border-radius: 2px;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
   color: var(--text);
   background: #2a475e;
+}
+
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a.nav-action {
+  color: #ffffff;
+  background: #1a9fff;
+  margin-left: 4px;
+}
+
+.nav-links a.nav-action:hover,
+.nav-links a.nav-action:focus {
+  background: #67c1f5;
 }
 
 .nav-links a::before {
