@@ -26,6 +26,12 @@ const postgres = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } })
   : null;
 
+if (postgres) {
+  postgres.on('error', (error) => {
+    console.error('Error inesperado del pool de PostgreSQL:', error);
+  });
+}
+
 if (sqlite) {
   sqlite.pragma('journal_mode = WAL');
   sqlite.exec(`
@@ -140,21 +146,26 @@ app.post('/api/auth/register', async (request, response) => {
 });
 
 app.post('/api/auth/login', async (request, response) => {
-  const { email, password } = request.body;
-  const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
-  const result = postgres
-    ? await postgres.query('SELECT * FROM users WHERE LOWER(email) = $1', [normalizedEmail])
-    : null;
-  const user = postgres
-    ? result.rows[0]
-    : sqlite.prepare('SELECT * FROM users WHERE email = ?').get(normalizedEmail);
+  try {
+    const { email, password } = request.body;
+    const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
+    const result = postgres
+      ? await postgres.query('SELECT * FROM users WHERE LOWER(email) = $1', [normalizedEmail])
+      : null;
+    const user = postgres
+      ? result.rows[0]
+      : sqlite.prepare('SELECT * FROM users WHERE email = ?').get(normalizedEmail);
 
-  if (!user || typeof password !== 'string' || !bcrypt.compareSync(password, user.password_hash)) {
-    return response.status(401).json({ error: 'Correo o contraseña incorrectos.' });
+    if (!user || typeof password !== 'string' || !bcrypt.compareSync(password, user.password_hash)) {
+      return response.status(401).json({ error: 'Correo o contraseña incorrectos.' });
+    }
+
+    const publicUser = { id: user.id, name: user.name, email: user.email };
+    return response.json({ user: publicUser, token: createToken(publicUser) });
+  } catch (error) {
+    console.error('Error al iniciar sesión:', error);
+    return response.status(503).json({ error: 'El servicio de autenticación no está disponible.' });
   }
-
-  const publicUser = { id: user.id, name: user.name, email: user.email };
-  return response.json({ user: publicUser, token: createToken(publicUser) });
 });
 
 app.get('/api/auth/me', authenticate, (request, response) => {
