@@ -394,6 +394,11 @@ body {
   font-size: 1.4rem;
 }
 
+.section-heading p {
+  margin: -10px 0 18px;
+  color: var(--muted);
+}
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -433,6 +438,78 @@ body {
   line-height: 1.6;
 }
 
+.game-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 0.82rem;
+}
+
+.cv-section {
+  margin-top: 28px;
+  padding: 22px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cv-card {
+  padding: 20px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.cv-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.cv-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cv-card .cv-role {
+  margin-top: -4px;
+  color: var(--accent);
+}
+
+.cv-label {
+  margin: 0 0 12px;
+  color: var(--accent) !important;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cv-list {
+  display: grid;
+  gap: 9px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.cv-list li::before {
+  content: "•";
+  margin-right: 9px;
+  color: var(--accent);
+}
+
+.cv-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 ::selection {
   background: var(--primary);
   color: #081008;
@@ -441,7 +518,8 @@ body {
 @media (max-width: 768px) {
   .hero-content,
   .features,
-  .stats-grid {
+  .stats-grid,
+  .cv-grid {
     grid-template-columns: 1fr;
   }
 

@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="game-content">
           <h3>${juego.nombre}</h3>
           <p>${juego.descripcion}</p>
+          <span class="game-link">Ver detalle</span>
         </div>
       </article>
     `).join('');
