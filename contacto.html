@@ -6,17 +6,19 @@
     <title>Contacto | GameHub</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="terminal-page contact-page">
-    <header class="site-header">
-      <nav class="nav container">
-        <div class="brand">GameHub</div>
-        <div class="nav-links">
-          <a href="index.html">Inicio</a>
-          <a class="active" href="contacto.html">Contacto</a>
-          <a href="login.html">Entrar</a>
-          <a class="nav-action" href="registro.html">Crear cuenta</a>
+  <body class="dashboard-body terminal-page contact-page">
+    <header class="dashboard-header">
+      <div class="container dashboard-topbar">
+        <div>
+          <p class="eyebrow light">gamehub@workspace:~$ contacto</p>
+          <h1>Contacto</h1>
         </div>
-      </nav>
+        <div class="dashboard-actions">
+          <a class="btn secondary" href="dashboard.html">Inicio</a>
+          <a class="btn secondary" href="contacto.html">Contacto</a>
+          <button id="logoutBtn" class="btn secondary">Cerrar sesión</button>
+        </div>
+      </div>
     </header>
 
     <main class="terminal-window contact-window">
@@ -70,5 +72,7 @@
         </article>
       </section>
     </main>
+    <script src="js/config.js"></script>
+    <script src="js/contacto.js"></script>
   </body>
 </html>
