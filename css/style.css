@@ -472,6 +472,12 @@ body {
   font-size: 1.05rem;
 }
 
+.cv-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
 .cv-card p {
   color: var(--muted);
   line-height: 1.6;
@@ -508,6 +514,38 @@ body {
 .cv-list a {
   color: var(--accent);
   text-decoration: none;
+}
+
+.contact-window {
+  padding-bottom: 34px;
+}
+
+.contact-hero {
+  padding: 58px 34px 34px;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-hero h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.contact-role {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-intro {
+  max-width: 650px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-grid {
+  padding: 28px 34px 0;
 }
 
 ::selection {
