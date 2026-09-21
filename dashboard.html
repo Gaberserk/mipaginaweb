@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="dashboard-body">
+    <header class="dashboard-header">
+      <div class="container dashboard-topbar">
+        <div>
+          <p class="eyebrow light">Panel de control</p>
+          <h1 id="welcomeUser">Bienvenido</h1>
+        </div>
+        <button id="logoutBtn" class="btn secondary">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="container dashboard-main">
+      <section class="stats-grid">
+        <article class="stat-card">
+          <p>Juegos favoritos</p>
+          <strong id="favoriteCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>Logros</p>
+          <strong>12</strong>
+        </article>
+        <article class="stat-card">
+          <p>Tiempo total</p>
+          <strong>24h</strong>
+        </article>
+      </section>
+
+      <section class="games-section">
+        <div class="section-heading">
+          <h2>Recomendados para ti</h2>
+        </div>
+        <div id="gamesList" class="games-grid"></div>
+      </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

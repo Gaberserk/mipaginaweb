@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-wrapper">
+      <section class="auth-card">
+        <h1>Crear cuenta</h1>
+        <p>Regístrate para acceder a todas las funciones.</p>
+
+        <form id="registroForm" class="auth-form">
+          <label>
+            <span>Nombre completo</span>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required />
+          </label>
+
+          <label>
+            <span>Correo electrónico</span>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </label>
+
+          <label>
+            <span>Contraseña</span>
+            <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required />
+          </label>
+
+          <label>
+            <span>Confirmar contraseña</span>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" required />
+          </label>
+
+          <button type="submit" class="btn primary full-width">Registrarme</button>
+        </form>
+
+        <p class="auth-footer">
+          ¿Ya tienes cuenta?
+          <a href="login.html">Inicia sesión</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="js/registro.js"></script>
+  </body>
+</html>

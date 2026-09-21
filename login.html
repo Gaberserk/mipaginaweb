@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-wrapper">
+      <section class="auth-card">
+        <h1>Iniciar sesión</h1>
+        <p>Accede a tu panel personal.</p>
+
+        <form id="loginForm" class="auth-form">
+          <label>
+            <span>Correo electrónico</span>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </label>
+
+          <label>
+            <span>Contraseña</span>
+            <input type="password" id="password" name="password" placeholder="********" required />
+          </label>
+
+          <button type="submit" class="btn primary full-width">Entrar</button>
+        </form>
+
+        <p class="auth-footer">
+          ¿No tienes cuenta?
+          <a href="registro.html">Regístrate aquí</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>
