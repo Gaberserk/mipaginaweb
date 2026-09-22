@@ -804,12 +804,13 @@ a { transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, t
 .btn.secondary:hover { background: #1a282e; border-color: var(--accent); }
 .hero-meta { display: flex; gap: 30px; margin-top: 48px; color: #6e7d82; font: 0.68rem "Cascadia Mono", monospace; text-transform: uppercase; }
 .hero-meta strong { display: block; margin-bottom: 5px; color: var(--text); font-size: 1.2rem; }
-.hero-art { position: relative; min-height: 410px; overflow: hidden; border: 1px solid #3f5d5d; background: linear-gradient(150deg, rgba(7, 13, 18, 0.2), rgba(10, 43, 40, 0.85)), url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1100&q=85") center/cover; box-shadow: var(--shadow); }
+.hero-art { position: relative; min-height: 410px; overflow: hidden; border: 1px solid #3f5d5d; background: radial-gradient(circle at 50% 38%, rgba(126, 232, 197, 0.2), transparent 28%), linear-gradient(145deg, #122b2d, #0b151b 62%, #172719); box-shadow: var(--shadow); }
 .hero-art::before { position: absolute; inset: 18px; border: 1px solid rgba(198, 240, 74, 0.32); content: ""; }
 .hero-art-grid { position: absolute; inset: 0; opacity: 0.28; background-image: linear-gradient(rgba(126, 232, 197, 0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(126, 232, 197, 0.16) 1px, transparent 1px); background-size: 40px 40px; transform: perspective(400px) rotateX(55deg) scale(1.7); transform-origin: center bottom; }
 .hero-art-label, .hero-art-caption { position: absolute; left: 34px; color: #d7e6d4; font: 0.66rem "Cascadia Mono", monospace; letter-spacing: 0.08em; }
 .hero-art-label { top: 34px; }.hero-art-caption { bottom: 34px; color: #a7beb5; }
 .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 12px var(--primary); }
+.controller-mark { position: absolute; top: 52%; left: 50%; width: min(68%, 300px); transform: translate(-50%, -50%) rotate(-7deg); filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.45)); }.controller-mark svg { display: block; width: 100%; overflow: visible; fill: #b9e9d1; }.controller-detail { fill: none; stroke: #102226; stroke-width: 9; stroke-linecap: round; }.controller-button { fill: #c6f04a; stroke: #102226; stroke-width: 5; }.controller-light { fill: none; stroke: #7ee8c5; stroke-width: 5; stroke-linecap: round; opacity: 0.8; }
 .hero-art-title { position: absolute; right: 32px; bottom: 62px; color: #f2f4ef; font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 800; line-height: 0.82; text-align: right; letter-spacing: -0.07em; }.hero-art-title em { color: var(--primary); font-style: normal; }
 
 .collection-section, .portfolio-section { padding: 92px 0; }
