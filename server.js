@@ -352,7 +352,7 @@ app.get('/api/auth/me', authenticate, (request, response) => {
 
 const games = [
   {
-    nombre: 'DESTROY ZOMBIES',
+    nombre: 'Destroy Zombies',
     categoria: 'Survival · Acción',
     descripcion: 'Sobrevive a oleadas de zombies, administra tus recursos y consigue la extracción.',
     imagen: 'assets/images/destroy-zombies.jpg',
@@ -373,7 +373,7 @@ const games = [
     enlace: 'https://developerberserk.itch.io/ecos-del-matadero/purchase'
   },
   {
-    nombre: 'DECAY',
+    nombre: 'Decay',
     categoria: 'Platformer · Acción',
     descripcion: 'Acompaña a Alice entre castillos, cuevas y hordas de criaturas en un mundo decadente.',
     imagen: 'assets/images/decay.jpg',
@@ -394,14 +394,14 @@ const games = [
     enlace: 'https://developerberserk.itch.io/the-adventures-of-kuro/purchase'
   },
   {
-    nombre: 'Aprender a programar',
+    nombre: 'Aprender a Programar',
     categoria: 'Educativo · GDScript',
     descripcion: 'Proyecto de preguntas para aprender conceptos de programación de videojuegos y GDScript.',
     imagen: 'assets/images/aprender-a-programar.jpg',
     enlace: 'https://developerberserk.itch.io/aprender-a-programar'
   },
   {
-    nombre: 'doomdanger',
+    nombre: 'Doomdanger',
     categoria: 'Experimental · Gratis',
     descripcion: 'Un proyecto experimental de DeveloperBerserk para explorar nuevas ideas de juego.',
     imagen: 'assets/images/doom-lang.jpg',
