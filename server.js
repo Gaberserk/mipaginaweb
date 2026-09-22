@@ -176,14 +176,67 @@ app.get('/api/auth/me', authenticate, (request, response) => {
   response.json({ user: request.user });
 });
 
+const games = [
+  {
+    nombre: 'DESTROY ZOMBIES',
+    categoria: 'Survival · Acción',
+    descripcion: 'Sobrevive a oleadas de zombies, administra tus recursos y consigue la extracción.',
+    imagen: 'assets/images/destroy-zombies.jpg',
+    enlace: 'https://developerberserk.itch.io/destroy-zombies'
+  },
+  {
+    nombre: 'Escuela Maldita',
+    categoria: 'Puzzle · Terror',
+    descripcion: 'Completa tus tareas en una escuela abandonada mientras una presencia acecha cada rincón.',
+    imagen: 'assets/images/escuela-maldita.jpg',
+    enlace: 'https://developerberserk.itch.io/escuela-maldita'
+  },
+  {
+    nombre: 'Ecos del Matadero',
+    categoria: 'Survival · Horror',
+    descripcion: 'Adéntrate en un mundo de terror psicológico donde cada paso puede ser el último.',
+    imagen: 'assets/images/ecos-del-matadero.jpg',
+    enlace: 'https://developerberserk.itch.io/ecos-del-matadero/purchase'
+  },
+  {
+    nombre: 'DECAY',
+    categoria: 'Platformer · Acción',
+    descripcion: 'Acompaña a Alice entre castillos, cuevas y hordas de criaturas en un mundo decadente.',
+    imagen: 'assets/images/decay.jpg',
+    enlace: 'https://developerberserk.itch.io/decay/purchase'
+  },
+  {
+    nombre: 'Las Aventuras de Tipiriki',
+    categoria: 'Platformer · Aventura',
+    descripcion: 'Ayuda a Tipiriki a recuperar el Cristal del Tiempo y devolver el equilibrio a Lumaria.',
+    imagen: 'assets/images/tipiriki.jpg',
+    enlace: 'https://developerberserk.itch.io/las-aventuras-de-tipiriki'
+  },
+  {
+    nombre: 'The Adventures of Kuro',
+    categoria: 'Platformer · Shooter',
+    descripcion: 'Avanza por niveles nostálgicos, elimina enemigos y supera obstáculos con Kuro.',
+    imagen: 'assets/images/kuro.jpg',
+    enlace: 'https://developerberserk.itch.io/the-adventures-of-kuro/purchase'
+  },
+  {
+    nombre: 'Aprender a programar',
+    categoria: 'Educativo · GDScript',
+    descripcion: 'Proyecto de preguntas para aprender conceptos de programación de videojuegos y GDScript.',
+    imagen: 'assets/images/aprender-a-programar.jpg',
+    enlace: 'https://developerberserk.itch.io/aprender-a-programar'
+  },
+  {
+    nombre: 'doomdanger',
+    categoria: 'Experimental · Gratis',
+    descripcion: 'Un proyecto experimental de DeveloperBerserk para explorar nuevas ideas de juego.',
+    imagen: 'assets/images/doom-lang.jpg',
+    enlace: 'https://developerberserk.itch.io/doom-lang'
+  }
+];
+
 app.get('/api/games', authenticate, (request, response) => {
-  response.json({
-    games: [
-      { nombre: 'Cyberpunk 2077', descripcion: 'Explora un mundo abierto lleno de desafíos y decisiones.' },
-      { nombre: 'Fortnite', descripcion: 'Compite en partidas rápidas con estilo y estrategia.' },
-      { nombre: 'Minecraft', descripcion: 'Construye, explora y crea mundos infinitos.' }
-    ]
-  });
+  response.json({ games });
 });
 
 initializeDatabase()

@@ -3,10 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GameHub</title>
-    <meta http-equiv="refresh" content="0; url=login.html" />
+    <meta name="description" content="GameHub: biblioteca de juegos y portfolio de Canteros Ricardo Gabriel." />
+    <title>GameHub | Juegos y portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="terminal-page">
-    <p>Redirigiendo a iniciar sesión...</p>
+  <body class="terminal-page landing-page">
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html"><span class="brand-mark">GH</span> GAMEHUB</a>
+        <nav class="nav-links" aria-label="Navegación principal">
+          <a class="active" href="#juegos">Juegos</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+          <a class="nav-action" href="login.html">Entrar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero landing-hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">PLATAFORMA DE JUEGOS · PORTFOLIO DIGITAL</p>
+            <h1>Ideas que se juegan.<br /><span>Historias que se quedan.</span></h1>
+            <p class="subtitle">Descubre proyectos, mundos y sistemas creados desde Buenos Aires. Un espacio para jugar, explorar y seguir el proceso detrás de cada build.</p>
+            <div class="actions">
+              <a class="btn primary" href="registro.html">Crear cuenta <span aria-hidden="true">→</span></a>
+              <a class="btn secondary" href="#portfolio">Conocer el proyecto</a>
+            </div>
+            <div class="hero-meta" aria-label="Datos de GameHub">
+              <span><strong>08</strong> títulos en colección</span>
+              <span><strong>01</strong> creador independiente</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Vista previa de un mundo de juego" role="img">
+            <div class="hero-art-grid"></div>
+            <div class="hero-art-label"><span class="status-dot"></span> BUILD 0.8.4 / ONLINE</div>
+            <div class="hero-art-title">NEON<br /><em>FRONTIER</em></div>
+            <div class="hero-art-caption">Exploración · estrategia · decisiones</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="juegos" class="collection-section">
+        <div class="container">
+          <div class="section-heading section-heading-wide">
+            <div>
+              <p class="eyebrow">COLECCIÓN DESTACADA</p>
+              <h2>Un vistazo al catálogo</h2>
+            </div>
+            <p>Proyectos en desarrollo, experiencias early access y mundos listos para descubrir.</p>
+          </div>
+          <div class="feature-games">
+            <article class="feature-game feature-game-large game-destroy-zombies">
+              <div class="feature-game-content"><span class="game-tag">SURVIVAL · ACCIÓN</span><h3>DESTROY ZOMBIES</h3><p>Sobrevive a oleadas de zombies, administra tus recursos y consigue la extracción.</p><a href="https://developerberserk.itch.io/destroy-zombies" class="text-link" target="_blank" rel="noopener noreferrer">Descargar / jugar <span>↗</span></a></div>
+            </article>
+            <article class="feature-game game-escuela-maldita">
+              <div class="feature-game-content"><span class="game-tag">PUZZLE · TERROR</span><h3>Escuela Maldita</h3><p>Completa tus tareas mientras una presencia acecha cada rincón.</p><a href="https://developerberserk.itch.io/escuela-maldita" class="text-link" target="_blank" rel="noopener noreferrer">Descargar <span>↗</span></a></div>
+            </article>
+            <article class="feature-game game-ecos-matadero">
+              <div class="feature-game-content"><span class="game-tag">SURVIVAL · HORROR</span><h3>Ecos del Matadero</h3><p>Adéntrate en un mundo donde cada paso puede ser el último.</p><a href="https://developerberserk.itch.io/ecos-del-matadero/purchase" class="text-link" target="_blank" rel="noopener noreferrer">Descargar <span>↗</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio-section">
+        <div class="container portfolio-layout">
+          <div>
+            <p class="eyebrow">DETRÁS DEL PIXEL</p>
+            <h2>Software, videojuegos<br />y curiosidad técnica.</h2>
+          </div>
+          <div class="portfolio-copy">
+            <p>GameHub es el laboratorio personal de Canteros Ricardo Gabriel: un lugar para compartir juegos, prototipos y las herramientas que los hacen posibles.</p>
+            <div class="skill-list"><span>Python</span><span>JavaScript</span><span>GDScript</span><span>Diseño de sistemas</span></div>
+            <a class="text-link" href="contacto.html">Conocer al desarrollador <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><span>GAMEHUB / 2026</span><span>Hecho para jugar con las ideas</span></div></footer>
   </body>
 </html>
