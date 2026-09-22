@@ -353,42 +353,42 @@ app.get('/api/auth/me', authenticate, (request, response) => {
 const games = [
   {
     nombre: 'Destroy Zombies',
-    categoria: 'Survival · Acción',
+    categoria: 'Supervivencia · Acción',
     descripcion: 'Sobrevive a oleadas de zombies, administra tus recursos y consigue la extracción.',
     imagen: 'assets/images/destroy-zombies.jpg',
     enlace: 'https://developerberserk.itch.io/destroy-zombies'
   },
   {
     nombre: 'Escuela Maldita',
-    categoria: 'Puzzle · Terror',
+    categoria: 'Rompecabezas · Terror',
     descripcion: 'Completa tus tareas en una escuela abandonada mientras una presencia acecha cada rincón.',
     imagen: 'assets/images/escuela-maldita.jpg',
     enlace: 'https://developerberserk.itch.io/escuela-maldita'
   },
   {
     nombre: 'Ecos del Matadero',
-    categoria: 'Survival · Horror',
+    categoria: 'Supervivencia · Horror',
     descripcion: 'Adéntrate en un mundo de terror psicológico donde cada paso puede ser el último.',
     imagen: 'assets/images/ecos-del-matadero.jpg',
     enlace: 'https://developerberserk.itch.io/ecos-del-matadero/purchase'
   },
   {
     nombre: 'Decay',
-    categoria: 'Platformer · Acción',
+    categoria: 'Plataformas · Acción',
     descripcion: 'Acompaña a Alice entre castillos, cuevas y hordas de criaturas en un mundo decadente.',
     imagen: 'assets/images/decay.jpg',
     enlace: 'https://developerberserk.itch.io/decay/purchase'
   },
   {
     nombre: 'Las Aventuras de Tipiriki',
-    categoria: 'Platformer · Aventura',
+    categoria: 'Plataformas · Aventura',
     descripcion: 'Ayuda a Tipiriki a recuperar el Cristal del Tiempo y devolver el equilibrio a Lumaria.',
     imagen: 'assets/images/tipiriki.jpg',
     enlace: 'https://developerberserk.itch.io/las-aventuras-de-tipiriki'
   },
   {
     nombre: 'The Adventures of Kuro',
-    categoria: 'Platformer · Shooter',
+    categoria: 'Plataformas · Disparos',
     descripcion: 'Avanza por niveles nostálgicos, elimina enemigos y supera obstáculos con Kuro.',
     imagen: 'assets/images/kuro.jpg',
     enlace: 'https://developerberserk.itch.io/the-adventures-of-kuro/purchase'
