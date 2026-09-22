@@ -62,6 +62,9 @@ async function initializeDatabase() {
 
 app.use(cors({ origin: frontendUrl }));
 app.use(express.json());
+app.use('/data', (request, response) => {
+  response.sendStatus(404);
+});
 app.use(express.static(__dirname));
 
 app.get('/api/health', (request, response) => {
