@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const { games } = await gamesResponse.json();
-    document.getElementById('favoriteCount').textContent = String(games.length).padStart(2, '0');
     const gamesGrid = document.getElementById('gamesGrid');
     gamesGrid.replaceChildren();
 

@@ -730,6 +730,14 @@ body {
   font-size: 0.82rem;
 }
 
+.auth-message {
+  min-height: 1.4em;
+  margin-top: 16px !important;
+  color: var(--accent) !important;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .dashboard-body .dashboard-header {
   border-top: 1px solid #302d42;
 }
